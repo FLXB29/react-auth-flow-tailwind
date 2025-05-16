@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
 import { Eye, EyeOff } from 'lucide-react';
 
 interface RegisterFormProps {
@@ -50,32 +49,34 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onSwitchToLogin }) => {
   };
 
   return (
-    <div className="w-full max-w-md animate-fade-in">
-      <div className="text-center mb-6">
-        <h1 className="text-2xl font-bold">ĐĂNG KÝ</h1>
+    <div className="w-full max-w-md text-white animate-fade-in">
+      <div className="text-center mb-8">
+        <h1 className="text-2xl font-bold">SIGN UP</h1>
       </div>
       
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-6">
         <div className="space-y-2">
-          <Label htmlFor="signup-email">Email</Label>
+          <label htmlFor="signup-email" className="block text-white">Email</label>
           <Input
             id="signup-email"
             type="email"
-            placeholder="Nhập email"
+            placeholder="Enter email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            className="bg-white text-black h-12"
           />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="signup-password">Mật khẩu</Label>
+          <label htmlFor="signup-password" className="block text-white">Password</label>
           <div className="relative">
             <Input
               id="signup-password"
               type={showPassword ? "text" : "password"}
-              placeholder="Nhập mật khẩu"
+              placeholder="Enter password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              className="bg-white text-black h-12"
             />
             <button
               type="button"
@@ -92,14 +93,15 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onSwitchToLogin }) => {
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="signup-confirm-password">Xác nhận mật khẩu</Label>
+          <label htmlFor="signup-confirm-password" className="block text-white">Confirm password</label>
           <div className="relative">
             <Input
               id="signup-confirm-password"
               type={showConfirmPassword ? "text" : "password"}
-              placeholder="Nhập lại mật khẩu"
+              placeholder="Confirm password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
+              className="bg-white text-black h-12"
             />
             <button
               type="button"
@@ -115,21 +117,22 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onSwitchToLogin }) => {
           </div>
         </div>
 
-        <Button type="submit" className="w-full">
-          Đăng ký
-        </Button>
-      </form>
-
-      <div className="mt-6 text-center">
-        <p className="text-sm text-gray-600 mb-2">Đã có tài khoản?</p>
         <Button 
+          type="submit" 
+          className="w-full h-12 bg-blue-100 hover:bg-blue-200 text-blue-800"
+        >
+          Sign up
+        </Button>
+        
+        <Button 
+          type="button"
           variant="outline" 
           onClick={onSwitchToLogin}
-          className="w-full"
+          className="w-full h-12 border-2 border-white text-white bg-blue-700 hover:bg-blue-800"
         >
-          Đăng nhập
+          Login
         </Button>
-      </div>
+      </form>
     </div>
   );
 };

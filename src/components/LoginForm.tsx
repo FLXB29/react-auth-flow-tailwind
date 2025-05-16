@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
 import { Eye, EyeOff } from 'lucide-react';
 
 interface LoginFormProps {
@@ -51,32 +50,34 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSwitchToRegister }) => {
   };
 
   return (
-    <div className="w-full max-w-md animate-fade-in">
-      <div className="text-center mb-6">
-        <h1 className="text-2xl font-bold">ĐĂNG NHẬP</h1>
+    <div className="w-full max-w-md text-white animate-fade-in">
+      <div className="text-center mb-8">
+        <h1 className="text-2xl font-bold">LOGIN</h1>
       </div>
       
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-6">
         <div className="space-y-2">
-          <Label htmlFor="login-email">Email</Label>
+          <label htmlFor="login-email" className="block text-white">Email</label>
           <Input
             id="login-email"
             type="email"
-            placeholder="Nhập email"
+            placeholder="Enter email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            className="bg-white text-black h-12"
           />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="login-password">Mật khẩu</Label>
+          <label htmlFor="login-password" className="block text-white">Password</label>
           <div className="relative">
             <Input
               id="login-password"
               type={showPassword ? "text" : "password"}
-              placeholder="Nhập mật khẩu"
+              placeholder="Enter password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              className="bg-white text-black h-12"
             />
             <button
               type="button"
@@ -95,28 +96,29 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSwitchToRegister }) => {
             <a 
               href="#" 
               onClick={handleForgotPassword}
-              className="text-sm text-blue-600 hover:text-blue-800 hover:underline"
+              className="text-sm text-white hover:underline"
             >
-              Quên mật khẩu
+              Forgot password
             </a>
           </div>
         </div>
 
-        <Button type="submit" className="w-full">
-          Đăng nhập
-        </Button>
-      </form>
-
-      <div className="mt-6 text-center">
-        <p className="text-sm text-gray-600 mb-2">Chưa có tài khoản?</p>
         <Button 
+          type="submit" 
+          className="w-full h-12 bg-blue-100 hover:bg-blue-200 text-blue-800"
+        >
+          Login
+        </Button>
+        
+        <Button 
+          type="button"
           variant="outline" 
           onClick={onSwitchToRegister}
-          className="w-full"
+          className="w-full h-12 border-2 border-white text-white bg-blue-700 hover:bg-blue-800"
         >
-          Đăng ký
+          Sign up
         </Button>
-      </div>
+      </form>
     </div>
   );
 };
