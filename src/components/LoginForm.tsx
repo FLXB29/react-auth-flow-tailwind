@@ -50,26 +50,26 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSwitchToRegister }) => {
   };
 
   return (
-    <div className="w-full max-w-md text-gray-800 p-8 animate-fade-in">
+    <div className="w-full max-w-md text-white p-8 animate-fade-in">
       <div className="text-center mb-8">
-        <h1 className="text-2xl font-bold text-blue-600">LOGIN</h1>
+        <h1 className="text-2xl font-bold text-white">LOGIN</h1>
       </div>
       
       <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="space-y-2">
-          <label htmlFor="login-email" className="block text-gray-700">Email</label>
+        <div className="space-y-1">
+          <label htmlFor="login-email" className="block text-white text-sm">Email</label>
           <Input
             id="login-email"
             type="email"
             placeholder="Enter email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="bg-white text-black h-12 border-gray-300"
+            className="bg-white text-black h-10 border-0"
           />
         </div>
 
-        <div className="space-y-2">
-          <label htmlFor="login-password" className="block text-gray-700">Password</label>
+        <div className="space-y-1">
+          <label htmlFor="login-password" className="block text-white text-sm">Password</label>
           <div className="relative">
             <Input
               id="login-password"
@@ -77,7 +77,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSwitchToRegister }) => {
               placeholder="Enter password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="bg-white text-black h-12 border-gray-300"
+              className="bg-white text-black h-10 border-0"
             />
             <button
               type="button"
@@ -96,7 +96,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSwitchToRegister }) => {
             <a 
               href="#" 
               onClick={handleForgotPassword}
-              className="text-sm text-blue-600 hover:underline"
+              className="text-sm text-white hover:underline"
             >
               Forgot password
             </a>
@@ -105,7 +105,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSwitchToRegister }) => {
 
         <Button 
           type="submit" 
-          className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white"
+          className="w-full h-10 bg-white hover:bg-gray-100 text-blue-600 font-medium border-0"
         >
           Login
         </Button>
@@ -114,7 +114,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSwitchToRegister }) => {
           type="button"
           variant="outline" 
           onClick={onSwitchToRegister}
-          className="w-full h-12 border-2 border-blue-600 text-blue-600 bg-white hover:bg-blue-50"
+          className="w-full h-10 border border-white text-white bg-transparent hover:bg-blue-600"
         >
           Sign up
         </Button>
