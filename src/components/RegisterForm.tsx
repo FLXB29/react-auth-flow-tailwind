@@ -49,26 +49,26 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onSwitchToLogin }) => {
   };
 
   return (
-    <div className="w-full max-w-md text-white animate-fade-in">
+    <div className="w-full max-w-md text-gray-800 p-8 animate-fade-in">
       <div className="text-center mb-8">
-        <h1 className="text-2xl font-bold">SIGN UP</h1>
+        <h1 className="text-2xl font-bold text-blue-600">SIGN UP</h1>
       </div>
       
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="space-y-2">
-          <label htmlFor="signup-email" className="block text-white">Email</label>
+          <label htmlFor="signup-email" className="block text-gray-700">Email</label>
           <Input
             id="signup-email"
             type="email"
             placeholder="Enter email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="bg-white text-black h-12"
+            className="bg-white text-black h-12 border-gray-300"
           />
         </div>
 
         <div className="space-y-2">
-          <label htmlFor="signup-password" className="block text-white">Password</label>
+          <label htmlFor="signup-password" className="block text-gray-700">Password</label>
           <div className="relative">
             <Input
               id="signup-password"
@@ -76,7 +76,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onSwitchToLogin }) => {
               placeholder="Enter password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="bg-white text-black h-12"
+              className="bg-white text-black h-12 border-gray-300"
             />
             <button
               type="button"
@@ -93,7 +93,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onSwitchToLogin }) => {
         </div>
 
         <div className="space-y-2">
-          <label htmlFor="signup-confirm-password" className="block text-white">Confirm password</label>
+          <label htmlFor="signup-confirm-password" className="block text-gray-700">Confirm password</label>
           <div className="relative">
             <Input
               id="signup-confirm-password"
@@ -101,7 +101,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onSwitchToLogin }) => {
               placeholder="Confirm password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
-              className="bg-white text-black h-12"
+              className="bg-white text-black h-12 border-gray-300"
             />
             <button
               type="button"
@@ -119,7 +119,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onSwitchToLogin }) => {
 
         <Button 
           type="submit" 
-          className="w-full h-12 bg-blue-100 hover:bg-blue-200 text-blue-800"
+          className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white"
         >
           Sign up
         </Button>
@@ -128,7 +128,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ onSwitchToLogin }) => {
           type="button"
           variant="outline" 
           onClick={onSwitchToLogin}
-          className="w-full h-12 border-2 border-white text-white bg-blue-700 hover:bg-blue-800"
+          className="w-full h-12 border-2 border-blue-600 text-blue-600 bg-white hover:bg-blue-50"
         >
           Login
         </Button>
